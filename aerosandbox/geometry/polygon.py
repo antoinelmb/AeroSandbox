@@ -238,6 +238,16 @@ class Polygon(AeroSandboxObject):
         Iuv = Ixy - A * centroid[0] * centroid[1]
 
         return Iuv
+    
+    def J_centroid(self):
+        """
+        Returns the nondimensionalized polar moment of inertia, taken about the centroid.
+        """
+        Ixx = self.Ixx()
+        Iyy = self.Iyy()
+        J = Ixx + Iyy
+
+        return J
 
     def J(self):
         """
